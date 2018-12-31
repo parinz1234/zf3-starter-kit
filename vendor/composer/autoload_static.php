@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0b410cc0ace1997da8cac296df5d8247
+class ComposerStaticInitaaba991e39a9522b7e63addf492b989d
 {
     public static $files = array (
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -75,7 +75,6 @@ class ComposerStaticInit0b410cc0ace1997da8cac296df5d8247
             'Zend\\Crypt\\' => 11,
             'Zend\\Console\\' => 13,
             'Zend\\Config\\' => 12,
-            'Zend\\ComponentInstaller\\' => 24,
             'Zend\\Code\\' => 10,
             'Zend\\Captcha\\' => 13,
             'Zend\\Cache\\' => 11,
@@ -342,10 +341,6 @@ class ComposerStaticInit0b410cc0ace1997da8cac296df5d8247
         'Zend\\Config\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-config/src',
-        ),
-        'Zend\\ComponentInstaller\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-component-installer/src',
         ),
         'Zend\\Code\\' => 
         array (
@@ -891,10 +886,10 @@ class ComposerStaticInit0b410cc0ace1997da8cac296df5d8247
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit0b410cc0ace1997da8cac296df5d8247::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit0b410cc0ace1997da8cac296df5d8247::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit0b410cc0ace1997da8cac296df5d8247::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit0b410cc0ace1997da8cac296df5d8247::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitaaba991e39a9522b7e63addf492b989d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitaaba991e39a9522b7e63addf492b989d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitaaba991e39a9522b7e63addf492b989d::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitaaba991e39a9522b7e63addf492b989d::$classMap;
 
         }, null, ClassLoader::class);
     }

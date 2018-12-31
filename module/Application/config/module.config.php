@@ -29,6 +29,19 @@ return array(
                     ),
                 ),
             ),
+            'test' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/test/[:action]',
+                    'constraints' => array(
+                        'action' => '(first|second|third)'
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Test',
+                        'action' => 'first',
+                    ),
+                ),
+            ),
             /*
             'xxx' => array(
                 'type' => 'Segment',
@@ -72,6 +85,7 @@ return array(
         'invokables' => array(
             //add controller
             'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Test' => 'Application\Controller\TestController',
             //'Application\Controller\Xxx' => 'Application\Controller\XxxController',
         ),
     ),
@@ -83,6 +97,9 @@ return array(
             #index
             'application/index/index' => __DIR__ . '/../view/index/index.phtml',
             'application/index/user' => __DIR__ . '/../view/index/user.phtml',
+            'application/test/first' => __DIR__ . '/../view/test/first.phtml',
+            'application/test/second' => __DIR__ . '/../view/test/second.phtml',
+            'application/test/third' => __DIR__ . '/../view/test/third.phtml',
             #layout
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
 			#404

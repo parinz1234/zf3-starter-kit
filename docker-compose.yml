@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  php:
+    build: .docker/php/
+    volumes:
+      - .:/var/vhosts/framework.zend.com
+  
+  nginx:
+    build: .docker/nginx/
+    ports:
+      - "8080:80"
+    links:
+      - php
+    volumes:
+      - .:/var/vhosts/framework.zend.com

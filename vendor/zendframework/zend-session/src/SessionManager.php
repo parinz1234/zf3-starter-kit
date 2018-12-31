@@ -12,7 +12,7 @@ namespace Zend\Session;
 use Zend\EventManager\Event;
 use Zend\EventManager\EventManagerInterface;
 use Zend\Stdlib\ArrayUtils;
- 
+
 /**
  * Session ManagerInterface implementation utilizing ext/session
  */
@@ -95,7 +95,7 @@ class SessionManager extends AbstractManager
         }
         if (headers_sent()) {
             return true;
-        } 
+        }
         return false;
     }
 
@@ -126,9 +126,9 @@ class SessionManager extends AbstractManager
         $oldSessionData = [];
         if (isset($_SESSION)) {
             $oldSessionData = $_SESSION;
-        } 
- 
-        @session_start();
+        }
+
+        session_start();
 
         if ($oldSessionData instanceof \Traversable
             || (! empty($oldSessionData) && is_array($oldSessionData))
@@ -136,7 +136,7 @@ class SessionManager extends AbstractManager
             $_SESSION = ArrayUtils::merge($oldSessionData, $_SESSION, true);
         }
 
-        $storage = $this->getStorage(); 
+        $storage = $this->getStorage();
 
         // Since session is starting, we need to potentially repopulate our
         // session storage
@@ -193,7 +193,7 @@ class SessionManager extends AbstractManager
             $options = array_merge($this->defaultDestroyOptions, $options);
         }
 
-        @session_destroy();
+        session_destroy();
         if ($options['send_expire_cookie']) {
             $this->expireSessionCookie();
         }
@@ -226,7 +226,7 @@ class SessionManager extends AbstractManager
         $storage  = $this->getStorage();
         if (!$storage->isImmutable()) {
             $_SESSION = $storage->toArray(true);
-            @session_write_close();
+            session_write_close();
             $storage->fromArray($_SESSION);
             $storage->markImmutable();
         }

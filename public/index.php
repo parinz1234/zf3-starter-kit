@@ -8,7 +8,7 @@ try
     $offset = 60 * 60;
     $expire = "expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
     header($expire);
-    header('Content-Length: ' . strlen($contentHeader));
+    // header('Content-Length: ' . strlen($contentHeader));
     header('Vary: Accept-Encoding');
     header("Access-Control-Allow-Origin: *");
     error_reporting(E_ALL|E_STRICT);
